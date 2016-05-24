@@ -311,8 +311,7 @@ Examples:
 * ``mysqlSelect(selection="max(a)")``: show the maximum value of the
   semimajor axis in the database.
 
-*
-  ``mysqlSelect(selection="Name,Principal_desig",condition="where NEO_flag<>0
+* ``mysqlSelect(selection="Name,Principal_desig",condition="where NEO_flag<>0
   or PHA_flag<>0")``: return all NEOs and PHAs.
 
 * ``mysqlSelect(selection="a",condition="sorted by a asc")``: return
