@@ -59,3 +59,28 @@ SQL commands to doing so.
        $ mysql -u root -p < user.sql
 ```
 
+Working with the database
+=========================
+
+Once installed you may manipulate the database from different
+languages (PHP, Pyhton, Perl, etc.).
+
+Here is an example of the database manipulation using Python:
+
+```
+import MySQLdb as mdb
+DATABASE="MinorBodies"
+USER="minorbodies"
+PASSWORD="347940"
+con=mdb.connect("localhost",USER,PASSWORD,DATABASE)
+db=con.cursor()
+
+db.execute("show columns from Bodies")
+fields=db.fetchall()
+
+db.execute("select * from Bodies where Name like '%zuluaga%'")
+results=db.fetchone()
+
+for i in xrange(len(results)):
+    print fields[i][0],":",results[i]
+```
