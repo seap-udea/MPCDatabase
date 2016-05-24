@@ -84,3 +84,12 @@ results=db.fetchone()
 for i in xrange(len(results)):
     print fields[i][0],":",results[i]
 ```
+
+You may also consider load a utility python package provided with the
+repositiory, namely **mpcdb.py**.
+
+```
+from mpcdb import *
+results=mysqlSelect(condition="limit 100")
+print results
+```

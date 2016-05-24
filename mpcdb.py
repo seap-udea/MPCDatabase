@@ -2,6 +2,7 @@
 #EXTERNAL PACKAGES
 ###################################################
 import MySQLdb as mdb
+from sys import argv,exit
 
 ###################################################
 #CONFIGURATION
@@ -9,6 +10,8 @@ import MySQLdb as mdb
 DATABASE="MinorBodies"
 USER="minorbodies"
 PASSWORD="347940"
+CON=mdb.connect("localhost",USER,PASSWORD,DATABASE)
+DB=CON.cursor()
 
 ###################################################
 #ROUTINES
@@ -20,6 +23,26 @@ class dict2obj(object):
             exec("self.%s=other.%s"%(attr,attr))
         return self
 
+def mysqlSelect(selection="*",table="Bodies",condition=""):
+    DB.execute("show columns from %s"%table)
+    fields=DB.fetchall()
+    
+    sql="select %s from %s %s"%(selection,table,condition)
+    DB.execute(sql)
+    results=DB.fetchall()
+
+    if selection!="*":
+        fields=[(field,) for field in selection.split(",")]
+
+    dresults=[]
+    for result in results:
+        row=dict()
+        for i in xrange(len(fields)):
+            field=fields[i][0]
+            row[field]=result[i]
+        dresults+=[row]
+    return dresults
+    
 def loadDatabase(server='localhost',
                  user=USER,
                  password=PASSWORD,
