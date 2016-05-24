@@ -14,6 +14,12 @@ can be manipulated in a MySQL server.  Once the MPC database is
 updated, we provide updated versions of the database that can be
 download and used in your server.
 
+Data attribution: [Minor Planet
+Center](http://www.minorplanetcenter.net/) and [NASA
+JPL](http://ssd.jpl.nasa.gov/sbdb.cgi).
+
+Developed by: Jorge I. Zuluaga (C) 2016.
+
 Getting the database
 ====================
 
