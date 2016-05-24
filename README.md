@@ -94,4 +94,4 @@ results=mysqlSelect(condition="limit 100")
 print results
 ```
 
-Where 'mysqlSelect' has the following syntax:
+Where ``mysqlSelect`` has the following syntax:
