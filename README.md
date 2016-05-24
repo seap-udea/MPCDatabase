@@ -318,6 +318,9 @@ Examples:
 * ``mysqlSelect(selection="a",condition="sorted by a asc")``: return
   semimajor axes in ascending order.
 
+* ``mysqlSelect(selection="diameter",table="SmallBodies",condition="diamater+0>0")``: return
+  diameters of all small bodies with a measured diameter.
+
 Read only if you are a contributor
 ==================================
 
