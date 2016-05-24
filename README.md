@@ -236,13 +236,15 @@ To update the database download the [json gzipped file from the MPC
 website](http://minorplanetcenter.net/Extended_Files/mpcorb_extended.json.gz)
 into the update directory of the MPCDatabase working directory.
 
-Once there split the json file into smaller pieces (containing 500 objects each):
+Once there split the json file into smaller pieces (blocks, containing
+500 objects each):
 
 ```
 python read_mpcorb.py
 ```
 
-Then save the properties of the objects in the database:
+There are approximately ~1400 blocks. Then save the properties of the
+objects in the database:
 
 ```
 python save_mpcorb.py
@@ -265,3 +267,4 @@ Upload the results to the repository:
 ```
 make commit
 ```
+
