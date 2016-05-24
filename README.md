@@ -95,3 +95,12 @@ print results
 ```
 
 Where ``mysqlSelect`` has the following syntax:
+
+```
+      mysqlSelect(selection="*",table="Bodies",condition="")
+```
+
+Examples:
+
+* ``results mysqlSelect(selection="*")``: Select all the bodies in the
+  database.
