@@ -1,2 +1,2 @@
-# MPCDatabase
-Database of Minor Planet Center
+#Database of the Minor Planet Center
+
