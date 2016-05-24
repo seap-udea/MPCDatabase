@@ -64,7 +64,107 @@ Database fields
 
 The fields of the MPC Database are fully described in the Guide to the
 [Extended Versions of MPC Data Files Based on the MPCORB
-Format](http://minorplanetcenter.net/Extended_Files/Extended%20MPCORB%20Data%20Format%20Manual.pdf)
+Format](http://minorplanetcenter.net/Extended_Files/Extended%20MPCORB%20Data%20Format%20Manual.pdf).
+Here we provide a summary:
+
+* **Name** (string): Name, if the asteroid has received one.
+
+* **Number** (string): Number, if the asteroid has received one; this
+  is the asteroid's permanent designation.
+
+* **Principal_desig** (string): Principal provisional designation (if it
+  exists) 
+
+* **Other_desigs** (string): Other provisional designations (if they
+  exist).
+
+* **H** (float): Absolute magnitude, H
+
+* **G** (float): Slope parameter, G
+
+* **Epoch* * (float): Epoch of the orbit (Julian Date).
+
+* **a** (float): Semimajor axis, a (AU).
+
+* **e** (float): Orbital eccentricity, e.
+
+* **i** (float): Inclination to the ecliptic, J2000.0 (degrees).
+
+* **Node** (float): Longitude of the ascending node, ☊, J2000.0 (degrees).
+
+* **Peri** (float): Argument of perihelion, ω, J2000.0 (degrees).
+
+* **M** (float): Mean anomaly, M, at the epoch (degrees).
+
+* **n** (float): Mean daily motion, n (degrees/day).
+
+* **U** (string): Uncertainty parameter, U (integer with values 0–9; but
+  refer to entry in Table 1 for other possible values)
+
+* **Ref** (string): Reference
+
+* **Num_obs** (integer): Number of observations.
+
+* **Num_opps** (integer): Number of oppositions.
+
+* **Arc_years** (string): Only present for multi-opposition orbits
+  (year of first observation – year of last observation).
+
+* **Arc_length** (integer): Only present for 1-opposition orbits
+  (days).
+
+* **rms** (float): r.m.s. residual (").
+
+* **Perturbers** (string): Coarse indicator of perturbers used in
+  orbit computation.
+
+* **Perturbers_2** (string): Precise indicator of perturbers used in
+  orbit computation.
+
+* **Last_obs** (string): Date of last observation included in orbit
+  solution (YYYY-MM-DD format)
+
+* **Hex_flags** (string): 4-hexdigit flags (refer to entry in Table 1
+  for explanation; in JSON format this information has been decoded
+  and is supplied in individual keywords) Computer string Name of
+  orbit computer (be it a person or machine).
+
+* **orbit_type** (string): Possible values:
+
+    • Atira
+    • Aten
+    • Apollo
+    • Amor
+    • Object with perihelion distance < 1.665 AU
+    • Hungaria
+    • MBA
+    • Phocaea
+    • Hilda
+    • Jupiter Trojan
+    • Distant Object
+    • Unclassified
+
+* **NEO_flag** (integer): Value = 1 if flag raised, otherwise keyword is absent.
+
+* **One_km_NEO_flag** (integer): Value = 1 if flag raised, otherwise keyword is absent.
+
+* **PHA_flag** (integer): Value = 1 if flag raised, otherwise keyword is absent.
+
+* **One_opposition_object_flag** (integer): Value = 1 if flag raised,
+    otherwise keyword is absent.
+
+* **Critical_list_numbered_object_flag** (integer): Value = 1 if flag
+    raised, otherwise keyword is absent.
+
+* **Perihelion_dist** (float): Perihelion distance (AU).
+
+* **Aphelion_dist** (float): Aphelion distance (AU).
+
+* **Semilatus_rectum** (float): Semilatus rectum distance (AU).
+
+* **Orbital_period** (float): Orbital period (years).
+
+* **Synodic_period** (float): Synodic period (years).
 
 Working with the database
 =========================
