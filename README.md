@@ -62,8 +62,9 @@ SQL commands to doing so.
 Database fields
 ===============
 
-The fields of the MPC Database are fully described in the 
-http://minorplanetcenter.net/Extended_Files/Extended%20MPCORB%20Data%20Format%20Manual.pdf
+The fields of the MPC Database are fully described in the Guide to the
+[Extended Versions of MPC Data Files Based on the MPCORB
+Format](http://minorplanetcenter.net/Extended_Files/Extended%20MPCORB%20Data%20Format%20Manual.pdf)
 
 Working with the database
 =========================
