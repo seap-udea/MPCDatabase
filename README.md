@@ -234,7 +234,34 @@ git clone git@github.com:seap-udea/MPCDatabase
 
 To update the database download the [json gzipped file from the MPC
 website](http://minorplanetcenter.net/Extended_Files/mpcorb_extended.json.gz)
-into the root directory of the MPCDatabase working directory.
+into the update directory of the MPCDatabase working directory.
 
-Once there 
+Once there split the json file into smaller pieces (containing 500 objects each):
 
+```
+python read_mpcorb.py
+```
+
+Then save the properties of the objects in the database:
+
+```
+python save_mpcorb.py
+```
+
+Once updated clean the directory:
+
+```
+make clean
+```
+
+and backup the database (go to the root directory of the MPCDatabase repository):
+
+```
+make backup
+```
+
+Upload the results to the repository:
+
+```
+make commit
+```
