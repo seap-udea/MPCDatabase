@@ -1,4 +1,4 @@
-#Database of the Minor Planet Center
+#Database of Small Planets and Small Bodies in the Solar System
 
 Dealing with the more than ~700,000 minor bodies of the Solar System
 could be challenging.  The *Minor Planeet Center* (MPC) publishes regularly
