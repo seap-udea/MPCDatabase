@@ -59,6 +59,12 @@ SQL commands to doing so.
        $ mysql -u root -p < user.sql
 ```
 
+Database fields
+===============
+
+The fields of the MPC Database are fully described in the 
+http://minorplanetcenter.net/Extended_Files/Extended%20MPCORB%20Data%20Format%20Manual.pdf
+
 Working with the database
 =========================
 
@@ -67,7 +73,7 @@ languages (PHP, Pyhton, Perl, etc.).
 
 Here is an example of the database manipulation using Python:
 
-```
+```python
 import MySQLdb as mdb
 DATABASE="MinorBodies"
 USER="minorbodies"
@@ -88,7 +94,7 @@ for i in xrange(len(results)):
 You may also consider load a utility python package provided with the
 repositiory, namely **mpcdb.py**.
 
-```
+```python
 from mpcdb import *
 results=mysqlSelect(condition="limit 100")
 print results
@@ -102,5 +108,17 @@ Where ``mysqlSelect`` has the following syntax:
 
 Examples:
 
-* ``results mysqlSelect(selection="*")``: Select all the bodies in the
-  database.
+* ``mysqlSelect()``: Select the first 100 the bodies in the
+  database (it could be very slow).  This is useful if running the
+  test under ipython.
+
+* ``mysqlSelect(selection="max(a)")``: show the maximum value of the
+  semimajor axis in the database.
+
+*
+  ``mysqlSelect(selection="Name,Principal_desig",condition="where NEO_flag<>0
+  or PHA_flag<>0")``: return all NEOs and PHAs.
+
+* ``mysqlSelect(selection="a",condition="sorted by a asc")``: return
+  semimajor axes in ascending order.
+

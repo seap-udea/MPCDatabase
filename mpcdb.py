@@ -23,7 +23,7 @@ class dict2obj(object):
             exec("self.%s=other.%s"%(attr,attr))
         return self
 
-def mysqlSelect(selection="*",table="Bodies",condition=""):
+def mysqlSelect(selection="*",table="Bodies",condition="limit 100"):
 
     #QUERY
     sql="select %s from %s %s"%(selection,table,condition)
@@ -45,5 +45,6 @@ def mysqlSelect(selection="*",table="Bodies",condition=""):
             field=fields[i][0]
             row[field]=result[i]
         dresults+=[row]
+
     return dresults
     
