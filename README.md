@@ -223,3 +223,18 @@ Examples:
 * ``mysqlSelect(selection="a",condition="sorted by a asc")``: return
   semimajor axes in ascending order.
 
+Read only if you are a contributor
+==================================
+
+You may clone a working copy of the repository using:
+
+```
+git clone git@github.com:seap-udea/MPCDatabase
+```
+
+To update the database download the [json gzipped file from the MPC
+website](http://minorplanetcenter.net/Extended_Files/mpcorb_extended.json.gz)
+into the root directory of the MPCDatabase working directory.
+
+Once there 
+
