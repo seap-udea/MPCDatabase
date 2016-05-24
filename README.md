@@ -182,33 +182,33 @@ The fields of this database are:
 
 Physical:
 
-* object internal database ID.
-* object primary SPK-ID.
-* object full name/designation.
+* **id**: object internal database ID.
+* **spkid**: object primary SPK-ID.
+* **full_name**: object full name/designation.
 * object primary designation.
-* object IAU name.
-* comet designation prefix.
-* Near-Earth Object (NEO) flag (Y/N).
-* Potentially Hazardous Asteroid (PHA) flag (Y/N).
-* [ H ] absolute magnitude parameter (mag).
-* [ G ] magnitude slope parameter (default is 0.15).
-* [ M1 ] comet total magnitude parameter (mag).
-* [ M2 ] comet nuclear magnitude parameter (mag).
-* [ K1 ] comet total magnitude slope parameter.
-* [ K2 ] comet nuclear magnitude slope parameter.
-* [ PC ] comet nuclear magnitude law - phase coefficient.
-* object diameter (from equivalent sphere) (km).
-* object bi/tri-axial ellipsoid dimensions (km).
-* geometric albedo.
-* rotation period (h).
-* [ GM ] mass expressed as product mass and grav. const. G (km^3/s^2).
-* color index B-V (mag).
-* color index U-B (mag).
-* color index I-R (mag).
-* spectral taxonomic type (SMASSII).
-* spectral taxonomic type (Tholen).
-* 1-sigma uncertainty in abs. mag. param. H (mag).
-* 1-sigma uncertainty in object diameter (km).
+* **name**: object IAU name.
+* **prefix**: comet designation prefix.
+* **neo**: Near-Earth Object (NEO) flag (Y/N).
+* **pha**: Potentially Hazardous Asteroid (PHA) flag (Y/N).
+* **H**: [ H ] absolute magnitude parameter (mag).
+* **G**: [ G ] magnitude slope parameter (default is 0.15).
+* **M1**: [ M1 ] comet total magnitude parameter (mag).
+* **M2**: [ M2 ] comet nuclear magnitude parameter (mag).
+* **K1**: [ K1 ] comet total magnitude slope parameter.
+* **K2**: [ K2 ] comet nuclear magnitude slope parameter.
+* **PC**: [ PC ] comet nuclear magnitude law - phase coefficient.
+* **diameter**: object diameter (from equivalent sphere) (km).
+* **X**: object bi/tri-axial ellipsoid dimensions (km).
+* **albedo**: geometric albedo.
+* **rot_per**: rotation period (h).
+* **GM**: [ GM ] mass expressed as product mass and grav. const. G (km^3/s^2).
+* **BV**: color index B-V (mag).
+* **UB**: color index U-B (mag).
+* **IR**: color index I-R (mag).
+* **spec_B**: spectral taxonomic type (SMASSII).
+* **spec_T**: spectral taxonomic type (Tholen).
+* **sigma_ma**: 1-sigma uncertainty in abs. mag. param. H (mag).
+* **diameter_sigma**: 1-sigma uncertainty in object diameter (km).
 
 Orbital:
 
