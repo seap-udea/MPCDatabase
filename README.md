@@ -93,3 +93,5 @@ from mpcdb import *
 results=mysqlSelect(condition="limit 100")
 print results
 ```
+
+Where 'mysqlSelect' has the following syntax:
