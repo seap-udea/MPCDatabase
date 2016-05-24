@@ -19,7 +19,9 @@ Getting the database
 
 To get the database just clone this repository:
 
+```
    $ git clone http://github.com/seap-udea/MPCDatabase.git
+```
 
 The full-size of the MySQL dumped database is ~50 MB.
 
