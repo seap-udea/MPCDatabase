@@ -185,7 +185,7 @@ Physical:
 * **id**: object internal database ID.
 * **spkid**: object primary SPK-ID.
 * **full_name**: object full name/designation.
-* object primary designation.
+* **pdes**: object primary designation.
 * **name**: object IAU name.
 * **prefix**: comet designation prefix.
 * **neo**: Near-Earth Object (NEO) flag (Y/N).
@@ -198,7 +198,7 @@ Physical:
 * **K2**: [ K2 ] comet nuclear magnitude slope parameter.
 * **PC**: [ PC ] comet nuclear magnitude law - phase coefficient.
 * **diameter**: object diameter (from equivalent sphere) (km).
-* **X**: object bi/tri-axial ellipsoid dimensions (km).
+* **extent**: object bi/tri-axial ellipsoid dimensions (km).
 * **albedo**: geometric albedo.
 * **rot_per**: rotation period (h).
 * **GM**: [ GM ] mass expressed as product mass and grav. const. G (km^3/s^2).
@@ -207,59 +207,59 @@ Physical:
 * **IR**: color index I-R (mag).
 * **spec_B**: spectral taxonomic type (SMASSII).
 * **spec_T**: spectral taxonomic type (Tholen).
-* **sigma_ma**: 1-sigma uncertainty in abs. mag. param. H (mag).
+* **H_sigma**: 1-sigma uncertainty in abs. mag. param. H (mag).
 * **diameter_sigma**: 1-sigma uncertainty in object diameter (km).
 
 Orbital:
 
-* orbit solution ID.
-* epoch of osculation (JED).
-* epoch of osculation (MJD).
-* epoch of osculation (ET).
-* equinox of reference frame.
-* [ e ] eccentricity.
-* [ a ] semi-major axis (AU).
-* [ q ] perihelion distance (AU).
-* [ i ] inclination (deg).
-* longitude of the ascending node (deg).
-* argument of perihelion (deg).
-* [ M ] mean anomaly (deg).
-* [ Q ] aphelion distance (AU).
-* [ n ] mean motion (deg/d).
-* time of perihelion passage (JED).
-* time of perihelion passage (ET).
-* orbital period (d).
-* orbital period (years).
-* Earth Minimum Orbit Intersection Distance (AU).
-* Earth Minimum Orbit Intersection Distance (LD).
-* Jupiter Minimum Orbit Intersection Distance (AU).
-* Jupiter Tisserand Invariant.
-* eccentricity (1-sigma uncertainty).
-* semi-major axis (1-sigma uncertainty) (AU).
-* perihelion distance (1-sigma uncertainty) (AU).
-* inclination (1-sigma uncertainty) (deg).
-* long. of the asc. node (1-sigma uncertainty) (deg).
-* argument of perihelion (1-sigma uncertainty) (deg).
-* mean anomaly (1-sigma uncertainty) (deg).
-* aphelion distance (1-sigma uncertainty) (AU).
-* mean motion (deg/d).
-* time of peri. passage (1-sigma uncertainty) (d).
-* orbital period (1-sigma uncertainty) (d).
-* orbit classification.
-* name of person (or institution) who computed the orbit.
-* number of days spanned by the data-arc (d).
-* date of first observation used in the orbit fit (UT).
-* date of last observation used in the orbit fit (UT).
-* number of observations (all types) used in fit.
-* number of delay-radar observations used in fit.
-* number of Doppler-radar observations used in fit.
-* orbit condition code (MPC &#39;U&#39; parameter).
-* normalized RMS of orbit fit (arcsec).
-* 2-body dynamics used flag (T/F).
-* [ A1 ] non-grav. radial parameter.
-* [ A2 ] non-grav. transverse parameter.
-* [ A3 ] non-grav. normal parameter.
-* [ DT ] non-grav. peri.-maximum offset (d).
+* **orbit_id**: orbit solution ID.
+* **epoch**: epoch of osculation (JED).
+* **epoch_mjd**: epoch of osculation (MJD).
+* **epoch_cal**: epoch of osculation (ET).
+* **equinox**: equinox of reference frame.
+* **e**: [ e ] eccentricity.
+* **a**: [ a ] semi-major axis (AU).
+* **q**: [ q ] perihelion distance (AU).
+* **i**: [ i ] inclination (deg).
+* **om**: longitude of the ascending node (deg).
+* **w**: argument of perihelion (deg).
+* **ma**: [ M ] mean anomaly (deg).
+* **ad**: [ Q ] aphelion distance (AU).
+* **n**: [ n ] mean motion (deg/d).
+* **tp**: time of perihelion passage (JED).
+* **tp_cal**: time of perihelion passage (ET).
+* **per**: orbital period (d).
+* **per_y**: orbital period (years).
+* **moid**: Earth Minimum Orbit Intersection Distance (AU).
+* **moid_ld**: Earth Minimum Orbit Intersection Distance (LD).
+* **moid_jup**: Jupiter Minimum Orbit Intersection Distance (AU).
+* **t_jup**: Jupiter Tisserand Invariant.
+* **sigma_e**: eccentricity (1-sigma uncertainty).
+* **sigma_a**: semi-major axis (1-sigma uncertainty) (AU).
+* **sigma_q**: perihelion distance (1-sigma uncertainty) (AU).
+* **sigma_i**: inclination (1-sigma uncertainty) (deg).
+* **sigma_om**: long. of the asc. node (1-sigma uncertainty) (deg).
+* **sigma_w**: argument of perihelion (1-sigma uncertainty) (deg).
+* **sigma_ma**: mean anomaly (1-sigma uncertainty) (deg).
+* **sigma_ad**: aphelion distance (1-sigma uncertainty) (AU).
+* **sigma_n**: mean motion (1-sigma uncertainty) (deg/d).
+* **sigma_tp**: time of peri. passage (1-sigma uncertainty) (d).
+* **sigma_per**: orbital period (1-sigma uncertainty) (d).
+* **class**: orbit classification.
+* **producer**: name of person (or institution) who computed the orbit.
+* **data_arc**: number of days spanned by the data-arc (d).
+* **first_obs**: date of first observation used in the orbit fit (UT).
+* **last_obs**: date of last observation used in the orbit fit (UT).
+* **n_obs_used**: number of observations (all types) used in fit.
+* **n_del_obs_used**: number of delay-radar observations used in fit.
+* **n_dop_obs_used**: number of Doppler-radar observations used in fit.
+* **condition_code**: orbit condition code (MPC parameter).
+* **rms**: normalized RMS of orbit fit (arcsec).
+* **two_body**: 2-body dynamics used flag (T/F).
+* **A1**: [ A1 ] non-grav. radial parameter.
+* **A2**: [ A2 ] non-grav. transverse parameter.
+* **A3**: [ A3 ] non-grav. normal parameter.
+* **DT**: [ DT ] non-grav. peri.-maximum offset (d).
 
 Working with the database
 =========================
