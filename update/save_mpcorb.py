@@ -58,3 +58,16 @@ for jfile in listf:
             ff.write("error=\n%s"%sys.exc_info()[0])
             ff.write("\n")
 ff.close()
+
+#############################################################
+#CREATE DERIVED TABLES
+#############################################################
+#CREATE NEO TABLE
+sql="drop table if exists NEO"
+db.execute(sql)
+con.commit()
+
+#CREATE NEO TABLE
+sql="creat table NEO select Principal_desig,Name,Perihelion_dist,e,i from Bodies where NEO_flag>0"
+db.execute(sql)
+con.commit()

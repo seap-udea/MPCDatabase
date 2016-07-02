@@ -1,3 +1,4 @@
+create database MinorBodies;
 use MinorBodies;
 drop table if exists Bodies;
 create table Bodies (

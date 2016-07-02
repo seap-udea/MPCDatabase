@@ -1,18 +1,18 @@
-#Database of Small Planets in the Solar System
+# Database of Small Planets in the Solar System
 
-Dealing with the more than ~700,000 minor bodies of the Solar System
-could be challenging.  The *Minor Planeet Center* (MPC) publishes regularly
-updates of the database in different formats (see
-http://www.minorplanetcenter.net/data).  
+Dealing with the data of more than ~700,000 minor bodies in the Solar
+System could be challenging.  The *Minor Planeet Center* (MPC)
+publishes regularly updates of the database in different formats (see
+http://www.minorplanetcenter.net/data).
 
 An efficient way to deal with this information is having it stored as
 a MySQL database.  This is precisely the purpose of this simple
 package.
 
-We provide here an update version of the MPC database in a format that
-can be manipulated in a MySQL server.  Once the MPC database is
-updated, we provide updated versions of the database that can be
-download and used in your server.
+We provide here an up-to-date version of the MPC database in a format
+that can be manipulated in a MySQL server.  Once the MPC database is
+updated centrally, you can updated this package to get the latest
+versions of the database.
 
 Data attribution: [Minor Planet
 Center](http://www.minorplanetcenter.net/) and [NASA
@@ -50,19 +50,16 @@ Please keep the root password in a safe place you will need it oftenly.
 Installing the database
 =======================
 
-Once cloned you should unpack and install the database.  
+Once cloned you should create the database:
+
+```
+        $ cat database.sql user.sql | mysql -u root -p 
+```
+
+Then unpack and populate the database.  
 
 ```
         $ make restore
-```
-
-This will create and populate the database "MinorBodies" in you MySQL
-server.  You may want to create a special user for MySQL queries and
-modifying the database.  The *user.sql* file contains the required
-SQL commands to doing so.
-
-```
-       $ mysql -u root -p < user.sql
 ```
 
 Database fields
@@ -71,6 +68,7 @@ Database fields
 The fields of the MPC Database are fully described in the Guide to the
 [Extended Versions of MPC Data Files Based on the MPCORB
 Format](http://minorplanetcenter.net/Extended_Files/Extended%20MPCORB%20Data%20Format%20Manual.pdf).
+
 Here we provide a summary:
 
 * **Name** (string): Name, if the asteroid has received one.
@@ -179,7 +177,8 @@ In order to complement the MPC database we have also added to this
 database the information contained in the [NASA Minor Bodies
 Database](http://ssd.jpl.nasa.gov/sbdb_query.cgi).  This database is
 somewhat complimentary since it also includes physical information
-about the minorbodies (albedo, diameter, spectral class, etc.).
+about many of the minor bodies in the database (albedo, diameter,
+spectral class, etc.).
 
 All this information is contained in the separate table
 ``MinorBodies`` (the MPC information is in the ``Bodies`` database).
@@ -332,13 +331,13 @@ Read only if you are a contributor
 You may clone a working copy of the repository using:
 
 ```
-git clone git@github.com:seap-udea/MPCDatabase
+	git clone git@github.com:seap-udea/MPCDatabase
 ```
 
 To update the MPC database download the [json gzipped file from the
 MPC
 website](http://minorplanetcenter.net/Extended_Files/mpcorb_extended.json.gz)
-into the update directory of the MPCDatabase working directory.  
+into the *update* directory of the MPCDatabase working directory.
 
 You need also to download the CSV file containing the NASA Minor
 Bodies Database using [this on-line
@@ -353,20 +352,20 @@ Once there split the json file into smaller pieces (blocks, containing
 500 objects each):
 
 ```
-python read_mpcorb.py
+	python read_mpcorb.py
 ```
 
 There are approximately ~1400 blocks. Then save the properties of the
 objects in the database:
 
 ```
-python save_mpcorb.py
+	python save_mpcorb.py
 ```
 
 Now it's time for updating the NSBD.  Run the script:
 
 ```
-python save_nsbd.py
+	python save_nsbd.py
 ```
 
 There is a total of ~700,000 minor bodies, so you should be patient.
@@ -374,19 +373,19 @@ There is a total of ~700,000 minor bodies, so you should be patient.
 Once updated clean the directory:
 
 ```
-make clean
+	make clean
 ```
 
 and backup the database (go to the root directory of the MPCDatabase repository):
 
 ```
-make backup
+	make backup
 ```
 
 Upload the results to the repository:
 
 ```
-make commit
+	make commit
 ```
 
 
