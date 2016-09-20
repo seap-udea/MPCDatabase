@@ -63,11 +63,11 @@ ff.close()
 #CREATE DERIVED TABLES
 #############################################################
 #CREATE NEO TABLE
-sql="drop table if exists NEO"
+sql="drop table if exists NEOS"
 db.execute(sql)
 con.commit()
 
 #CREATE NEO TABLE
-sql="creat table NEO select Principal_desig,Name,Perihelion_dist,e,i from Bodies where NEO_flag>0"
+sql="create table NEOS select Principal_desig,Name,Perihelion_dist,e,i from Bodies where NEO_flag>0"
 db.execute(sql)
 con.commit()
