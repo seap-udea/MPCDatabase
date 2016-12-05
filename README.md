@@ -388,4 +388,9 @@ Upload the results to the repository:
 	make commit
 ```
 
+Create database of NEOs:
 
+```
+drop table NEOS;
+create table NEOS (Principal_desig varchar(255),Perihelion_dist double,e double,i double,sini double,a double,n double,Node double,sinO double,Peri double,sinw double,PRIMARY KEY(Principal_desig)) select Principal_desig,Perihelion_dist,e,i,sin(i*PI()/180) as sini,a,n,Node,sin(Node*PI()/180) as sinO,Peri,sin(Peri*PI()/180) as sinw from Bodies where NEO_flag>0;
+```

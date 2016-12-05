@@ -31,3 +31,4 @@ install:
 	@mysql -u root -p < user.sql
 	@echo "User and database created..."
 	@make restore
+
